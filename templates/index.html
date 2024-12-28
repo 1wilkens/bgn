@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Board Game Score Tracker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            max-width: 800px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ccc;
+            text-align: center;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        h2 {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Board Game Score Tracker</h1>
+
+    <!-- Total Score Table -->
+    <h2>Total Score</h2>
+    <table>
+        <tr>
+            <th>Player</th>
+            <th>Total Score</th>
+        </tr>
+        {% for player in players %}
+            <tr>
+                <td>{{ player.name }}</td>
+                <td>{{ player.total_score }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+
+    <!-- Game-Specific Table for Chess -->
+    <h2>Game 1: Chess</h2>
+    {# <table>
+        <tr>
+            <th>Match</th>
+            <th>{% for player in players %}<th>{{ player.name }}</th>{% endfor %}</th>
+            <th>Winner</th>
+        </tr>
+        {% for match in matches["chess"] %}
+            <tr>
+                <td>{{ match.name }}</td>
+                {% for score in match.scores %}
+                    <td>{{ score }}</td>
+                {% endfor %}
+                <td>{{ match.winner }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+
+    <!-- Game-Specific Table for Monopoly -->
+    <h2>Game 2: Monopoly</h2>
+    <table>
+        <tr>
+            <th>Round</th>
+            <th>{% for player in players %}<th>{{ player.name }}</th>{% endfor %}</th>
+            <th>Winner</th>
+        </tr>
+        {% for round in matches["monopoly"] %}
+            <tr>
+                <td>{{ round.name }}</td>
+                {% for score in round.scores %}
+                    <td>{{ score }}</td>
+                {% endfor %}
+                <td>{{ round.winner }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+
+    <!-- Game-Specific Table for Scrabble -->
+    <h2>Game 3: Scrabble</h2>
+    <table>
+        <tr>
+            <th>Round</th>
+            <th>{% for player in players %}<th>{{ player.name }}</th>{% endfor %}</th>
+            <th>Winner</th>
+        </tr>
+        {% for round in matches["scrabble"] %}
+            <tr>
+                <td>{{ round.name }}</td>
+                {% for score in round.scores %}
+                    <td>{{ score }}</td>
+                {% endfor %}
+                <td>{{ round.winner }}</td>
+            </tr>
+        {% endfor %}
+    </table> #}
+
+</body>
+</html>
