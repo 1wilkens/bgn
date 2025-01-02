@@ -48,7 +48,17 @@
     </table>
 
     <!-- Game-Specific Table for Chess -->
-    <h2>Game 1: Chess</h2>
+    {% for game in games %}
+    <h2>Game {{ loop.index }}: {{ game.name }} ({{ game.matches | length }} matches)</h2>
+
+    <table>
+        <tr>
+            <th>Player</th>
+            <th>Score</th>
+        </tr>
+    </table>
+    {% endfor %}
+
     {# <table>
         <tr>
             <th>Match</th>
